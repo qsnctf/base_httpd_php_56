@@ -1,6 +1,6 @@
 # 说明
 ## 环境
-Linux环境：alpine\
+Linux环境：Debian\
 Web服务：Apache(httpd)\
 Web应用：PHP 5.6
 
