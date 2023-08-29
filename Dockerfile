@@ -5,9 +5,8 @@ LABEL Organization="qsnctf" Author="M0x1n <lqn@sierting.com>"
 
 COPY files /tmp/
 
-RUN sed -i 's/deb.debian.org/archive.debian.org/g' /etc/apt/sources.list \
-    && sed -i 's|security.debian.org|archive.debian.org/debian-security|g' /etc/apt/sources.list \
-    && apt-get update -y; apt-get install -y net-tools wget \
+RUN mv /tmp/sources.list /etc/apt/sources.list \
+    && apt-get update -y && apt-get install -y net-tools wget \
     && mv /tmp/flag.sh /flag.sh \
     && mv /tmp/docker-php-entrypoint /usr/local/bin/docker-php-entrypoint \
     && mv /tmp/apache2.conf /etc/apache2/apache2.conf \
